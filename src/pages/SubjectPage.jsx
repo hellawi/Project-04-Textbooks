@@ -20,17 +20,21 @@ function SubjectPage() {
           Підручники 10 клас
         </Text>
         <Flex mt={6} wrap={'wrap'} gap={6} justify={'center'}>
-          {books.map((book) => (
-            <BookItem
-              key={book.id}
-              description={book.description}
-              subject={book.subject}
-              grade={book.grade}
-              title={book.title}
-              url={book.url}
-              cover={book.cover}
-            />
-          ))}
+          {books.length > 0 ? (
+            books.map((book) => (
+              <BookItem
+                key={book.id}
+                description={book.description}
+                subject={book.subject}
+                grade={book.grade}
+                title={book.title}
+                url={book.url}
+                cover={book.cover}
+              />
+            ))
+          ) : (
+            <p>Книжок не знайдено🙁</p>
+          )}
         </Flex>
       </GridItem>
       <Box mt={'50px'}>
