@@ -1,5 +1,5 @@
-import { Grid, GridItem, Text, Flex, Box } from '@chakra-ui/react';
-import Sidebar from '../components/Sidebar';
+import { Grid, GridItem, Text, Flex } from '@chakra-ui/react';
+
 import BookItem from '../components/BookItem';
 import { getAllBooksService } from '../services/booksService';
 import { useEffect, useState } from 'react';
@@ -37,9 +37,6 @@ function SubjectPage() {
           )}
         </Flex>
       </GridItem>
-      <Box mt={'50px'}>
-        <Sidebar />
-      </Box>
     </Grid>
   );
 }

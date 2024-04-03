@@ -3,6 +3,7 @@ import RootLayout from '../layouts/RootLayout';
 import HomePage from '../pages/HomePage';
 import BookPage from '../pages/BookPage';
 import SubjectPage from '../pages/SubjectPage';
+import ClassPage from '../pages/ClassPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/book" element={<BookPage />} />
         <Route path="/subjects" element={<SubjectPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/classPage" element={<ClassPage />} />
       </Route>
     </Routes>
   );

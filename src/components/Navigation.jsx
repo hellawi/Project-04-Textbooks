@@ -19,22 +19,22 @@ function Navigation() {
       <Flex w="100%" p={4} gap={5} justify="center">
         <Text>Класи:</Text>
         <Center>
-          <ChakraLink as={ReactRouterLink} to="classPage">
+          <ChakraLink as={ReactRouterLink} to="/classPage">
             1
           </ChakraLink>
         </Center>
         <Center>
-          <ChakraLink as={ReactRouterLink} to="classPage">
+          <ChakraLink as={ReactRouterLink} to="/classPage">
             2
           </ChakraLink>
         </Center>
         <Center>
-          <ChakraLink as={ReactRouterLink} to="classPage">
+          <ChakraLink as={ReactRouterLink} to="/classPage">
             3
           </ChakraLink>
         </Center>
         <Center>
-          <ChakraLink as={ReactRouterLink} to="classPage">
+          <ChakraLink as={ReactRouterLink} to="/classPage">
             4
           </ChakraLink>
         </Center>
