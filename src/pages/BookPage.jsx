@@ -2,20 +2,30 @@ import { Box, Button, Heading, Textarea } from '@chakra-ui/react';
 import PDFReader from '../components/book/PDFReader';
 import Review from '../components/book/Review';
 import Details from '../components/book/Details';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { findBookById } from '../services/booksService';
 
 function BookPage() {
-  const descriptionBook =
-    'Вітаємо Вас з новим роком навчання! Залишаючи за плечима курси `Загальна географія` та `Материки та океани`, Ви готові зробити наступний крок у вивченні географії. Курс `Україна у світі: природа населення` допоможе Вам розширити свої знання про рідну країну та поглибити їх, вивчаючи біологічні, екологічні та фізичні закономірності її розвитку. Природа нашої держави - це окремий світ, який необхідно не тільки дивитися, а й бачити. Разом з курсом `Україна у світі: природа, населення` Ви зможете дізнатися нові факти про рідну країну та зрозуміти, наскільки вона унікальна. Відкрийте для себе новий світ географії. Допоможе Вам у цьомe підручник з географії за восьмий клас автора Пестушко. Бажаємо успіху!';
+  const { bookId } = useParams();
+  const [book, setBook] = useState();
+
+  useEffect(() => {
+    findBookById(bookId).then((data) => {
+      setBook(data);
+    });
+  });
+
   return (
     <div>
       <Heading mb="35px" ml="15px" mt="10px">
-        Підручник Географія 8 клас Пестушко{' '}
+        Підручник {book.title}{' '}
         <span style={{ color: '#b02e3b' }}>(Поглиблене)</span>
       </Heading>
 
       <Details
         cover="https://shkola.in.ua/images/pictures/Pidruchnyky/8-klas/Geografija/heohrafiia-8-klas-pestushko-2021-pohlyblene.jpg"
-        description={descriptionBook}
+        description={book.description}
         author="Валерій Пестушко, Ганна Уварова, Андрій Головань"
         subject="Географія (поглиблене вивчення)"
         pub="Генеза, 2021"
