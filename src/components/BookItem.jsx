@@ -1,26 +1,40 @@
+import PropTypes from 'prop-types';
 import { LinkBox, LinkOverlay, Image, Text, Flex } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
-function BookItem() {
+BookItem.propTypes = {
+  description: PropTypes.string,
+  title: PropTypes.string,
+  subject: PropTypes.string,
+  grade: PropTypes.number,
+  url: PropTypes.string,
+  cover: PropTypes.string,
+};
+
+function BookItem({ description, title, subject, grade, url, cover }) {
+  const defaultCover = 'https://via.placeholder.com/1600x900';
+
   return (
-    <LinkBox border={'1px solid #576882'} borderRadius={5}>
+    <LinkBox border={'1px solid #576882'}>
       <Flex gap={4}>
         <Image
-          maxW={'200px'}
+          w={'200px'}
           fit={'cover'}
           aspectRatio={3 / 4}
-          src="https://shkola.in.ua/images/pictures/Pidruchnyky/10-klas/Algebra/algebra-10-klas-bevz-2018.jpg"
+          src={cover ? cover : defaultCover}
           alt="book cover"
+          bg={'gray.500'}
         />
-        <Flex mt={'10px'} maxW={'200px'} direction={'column'} gap={2}>
-          <LinkOverlay as={RouterLink} to={''}>
-            <Text>Book title</Text>
+        <Flex mt={'10px'} mr={2} maxW={'200px'} direction={'column'} gap={2}>
+          <LinkOverlay as={RouterLink} to={url} isExternal={true}>
+            <Text>{title}</Text>
           </LinkOverlay>
-          <Text>Subject</Text>
-          <Text>Grade</Text>
+          <Text>{subject}</Text>
+          <Text>{grade}</Text>
           <Text>
-            Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis, harum!
+            {description.length > 200
+              ? description.slice(0, 200) + '...'
+              : description}
           </Text>
         </Flex>
       </Flex>
