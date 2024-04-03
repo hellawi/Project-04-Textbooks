@@ -11,7 +11,7 @@ function Navigation() {
           </ChakraLink>
         </Center>
         <Center>
-          <ChakraLink as={ReactRouterLink} to="/subjectPage">
+          <ChakraLink as={ReactRouterLink} to="/subjects">
             Підручники
           </ChakraLink>
         </Center>
