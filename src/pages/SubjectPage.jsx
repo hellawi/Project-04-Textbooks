@@ -1,23 +1,25 @@
 import { Grid, GridItem, Text, Flex } from '@chakra-ui/react';
-
 import BookItem from '../components/BookItem';
+import SubjectsNavbar from '../components/SubjectsNavbar';
 import { getAllBooksService } from '../services/booksService';
 import { useEffect, useState } from 'react';
 
 function SubjectPage() {
   const [books, setBooks] = useState([]);
+  const [grade, setGrade] = useState(null);
 
   useEffect(() => {
-    getAllBooksService().then((books) => {
+    getAllBooksService({ grade }).then((books) => {
       setBooks(books.items);
     });
-  }, []);
-  console.log(books);
+  }, [grade]);
+
   return (
-    <Grid templateColumns="3fr 1fr" mt={10} px={5}>
+    <Grid mt={10} px={5}>
       <GridItem>
-        <Text align={'center'} fontSize="2xl">
-          Підручники 10 клас
+        <SubjectsNavbar setGrade={setGrade} />
+        <Text align={'center'} fontSize="2xl" mt={5}>
+          Підручники {grade} {grade && 'класу'}
         </Text>
         <Flex mt={6} wrap={'wrap'} gap={6} justify={'center'}>
           {books.length > 0 ? (
@@ -33,7 +35,9 @@ function SubjectPage() {
               />
             ))
           ) : (
-            <p>Книжок не знайдено🙁</p>
+            <Text fontSize={'xl'} fontWeight={'medium'}>
+              Книжок не знайдено 🙁
+            </Text>
           )}
         </Flex>
       </GridItem>
