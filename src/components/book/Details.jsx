@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { IoMdDownload } from 'react-icons/io';
 
-function Details({ cover, description, author, subject, pub, download }) {
+function Details({ cover, description, subject, pub, download }) {
   return (
     <Card
       ml="15px"
@@ -29,12 +29,6 @@ function Details({ cover, description, author, subject, pub, download }) {
       <Stack>
         <CardBody>
           <Text py="2">{description}</Text>
-          <Text>
-            <span style={{ color: '#ED8936', fontWeight: 'bold' }}>
-              Автори:
-            </span>{' '}
-            {author}
-          </Text>
           <Text>
             <span style={{ color: '#ED8936', fontWeight: 'bold' }}>
               Предмет:
