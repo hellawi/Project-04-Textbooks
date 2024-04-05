@@ -20,14 +20,13 @@ function BookPage() {
     <div>
       <Heading mb="35px" ml="15px" mt="10px">
         Підручник {book.title}{' '}
-        <span style={{ color: '#b02e3b' }}>(Поглиблене)</span>
+        {/* <span style={{ color: '#b02e3b' }}>(Поглиблене)</span> */}
       </Heading>
 
       <Details
         cover="https://shkola.in.ua/images/pictures/Pidruchnyky/8-klas/Geografija/heohrafiia-8-klas-pestushko-2021-pohlyblene.jpg"
         description={book.description}
-        author="Валерій Пестушко, Ганна Уварова, Андрій Головань"
-        subject="Географія (поглиблене вивчення)"
+        subject={book.subject}
         pub="Генеза, 2021"
         download="https://drive.usercontent.google.com/u/0/uc?id=1te_FTuW0NHGNL_8luDoHhPE1yLmpsb81&export=download"
       />
