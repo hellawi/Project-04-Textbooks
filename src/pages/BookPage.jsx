@@ -27,8 +27,8 @@ function BookPage() {
         cover="https://shkola.in.ua/images/pictures/Pidruchnyky/8-klas/Geografija/heohrafiia-8-klas-pestushko-2021-pohlyblene.jpg"
         description={book.description}
         subject={book.subject}
-        pub="Генеза, 2021"
-        download="https://drive.usercontent.google.com/u/0/uc?id=1te_FTuW0NHGNL_8luDoHhPE1yLmpsb81&export=download"
+        class={book.grade}
+        download={book.url}
       />
 
       <br />

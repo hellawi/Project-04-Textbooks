@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { IoMdDownload } from 'react-icons/io';
 
-function Details({ cover, description, subject, pub, download }) {
+function Details({ cover, description, subject, clas, download }) {
   return (
     <Card
       ml="15px"
@@ -37,9 +37,9 @@ function Details({ cover, description, subject, pub, download }) {
           </Text>
           <Text>
             <span style={{ color: '#ED8936', fontWeight: 'bold' }}>
-              Видавництво:
+              Клас:
             </span>{' '}
-            {pub}
+            {clas}
           </Text>
         </CardBody>
 
@@ -58,8 +58,7 @@ export default Details;
 Details.propTypes = {
   cover: PropTypes.string,
   description: PropTypes.string,
-  author: PropTypes.string,
   subject: PropTypes.string,
-  pub: PropTypes.string,
   download: PropTypes.string,
+  clas: PropTypes.string,
 };
