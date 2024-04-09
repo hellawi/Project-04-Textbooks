@@ -10,7 +10,8 @@ function App() {
     <Routes>
       <Route element={<RootLayout />}>
         <Route path="/book" element={<BookPage />} />
-        <Route path="/subjects" element={<SubjectPage />} />
+        <Route exact path="/subjects" element={<SubjectPage />} />
+        <Route path="/subjects/:grade" element={<SubjectPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/classPage" element={<ClassPage />} />
       </Route>
