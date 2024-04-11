@@ -1,6 +1,13 @@
 import { Flex, Text, Button } from '@chakra-ui/react';
+import propTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function Sidebar() {
+Sidebar.propTypes = {
+  subjects: propTypes.arrayOf(propTypes.string).isRequired,
+  grade: propTypes.number.isRequired,
+};
+
+function Sidebar({ subjects, grade }) {
   return (
     <Flex
       ml={20}
@@ -8,20 +15,26 @@ function Sidebar() {
       flexDirection={'column'}
       gap={2}
       borderRadius={5}
-      p={3}
+      p={5}
       bg={'#2F374A'}
       border={'2px solid #576zzz882'}
     >
       <Text w="100%" fontSize="xl" mb="4">
-        Предмети 10 клас
+        Предмети {grade} клас
       </Text>
-      <Button w="100%">Алгебра</Button>
-      <Button w="100%">Англійська мова</Button>
-      <Button w="100%">Геометрія</Button>
-      <Button w="100%">Географія</Button>
-      <Button w="100%">Захист України</Button>
-      <Button w="100%">Українська мова</Button>
-      <Button w="100%">Фізика</Button>
+      {subjects.map((subject) => (
+        <Button
+          as={Link}
+          to={`/subjects/${grade}/${subject}`}
+          key={subject}
+          colorScheme={'blue'}
+          variant={'outline'}
+          w="100%"
+          fontWeight={'medium'}
+        >
+          {subject}
+        </Button>
+      ))}
     </Flex>
   );
 }
