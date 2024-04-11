@@ -16,7 +16,7 @@ function Navigation() {
           </ChakraLink>
         </Center>
       </Flex>
-      <Flex w="100%" p={4} gap={5} justify="center">
+      <Flex w="100%" p={4} gap={5} color="white" justify="center">
         <Text>Класи:</Text>
         <Center>
           <ChakraLink as={ReactRouterLink} to="/classPage">

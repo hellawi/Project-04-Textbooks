@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { LinkBox, LinkOverlay, Image, Text, Flex } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link, Link as RouterLink } from 'react-router-dom';
 
 BookItem.propTypes = {
   description: PropTypes.string,
@@ -9,13 +9,14 @@ BookItem.propTypes = {
   grade: PropTypes.number,
   url: PropTypes.string,
   cover: PropTypes.string,
+  id: PropTypes.number,
 };
 
-function BookItem({ description, title, subject, grade, url, cover }) {
+function BookItem({ description, title, subject, grade, url, cover, id }) {
   const defaultCover = 'https://via.placeholder.com/1600x900';
 
   return (
-    <LinkBox border={'1px solid #576882'}>
+    <LinkBox border={'1px solid #576882'} as={Link} to={`/subjects/${id}`}>
       <Flex gap={4}>
         <Image
           w={'200px'}

@@ -26,6 +26,7 @@ function SubjectPage() {
             books.map((book) => (
               <BookItem
                 key={book.id}
+                id={book.id}
                 description={book.description}
                 subject={book.subject}
                 grade={book.grade}
