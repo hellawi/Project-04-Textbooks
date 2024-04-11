@@ -1,6 +1,6 @@
 import { Flex, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { propTypes } from 'prop-types';
+import propTypes from 'prop-types';
 
 SubjectsNavbar.propTypes = {
   grades: propTypes.arrayOf(propTypes.number).isRequired,
