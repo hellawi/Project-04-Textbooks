@@ -16,8 +16,8 @@ function Sidebar({ subjects, grade }) {
       gap={2}
       borderRadius={5}
       p={5}
-      bg={'#2F374A'}
-      border={'2px solid #576zzz882'}
+      bg={'#fff'}
+      border={'1px solid #576882'}
     >
       <Text w="100%" fontSize="xl" mb="4">
         Предмети {grade} клас
