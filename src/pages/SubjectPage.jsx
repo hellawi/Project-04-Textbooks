@@ -3,21 +3,29 @@ import BookItem from '../components/BookItem';
 import SubjectsNavbar from '../components/SubjectsNavbar';
 import { getAllBooksService } from '../services/booksService';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 function SubjectPage() {
   const [books, setBooks] = useState([]);
-  const [grade, setGrade] = useState(null);
+  const [grades, setGrades] = useState([]);
+  const { grade = null } = useParams();
+
+  const fetchBooksAndGrades = async (grade) => {
+    const books = await getAllBooksService({ grade });
+    setBooks(books.items);
+    
+    const uniqueGrades = [...new Set(books.items.map((book) => book.grade))];
+    setGrades(uniqueGrades);
+  };
 
   useEffect(() => {
-    getAllBooksService({ grade }).then((books) => {
-      setBooks(books.items);
-    });
+    fetchBooksAndGrades(grade);
   }, [grade]);
 
   return (
     <Grid mt={10} px={5}>
       <GridItem>
-        <SubjectsNavbar setGrade={setGrade} />
+        <SubjectsNavbar grades={grades} />
         <Text align={'center'} fontSize="2xl" mt={5}>
           Підручники {grade} {grade && 'класу'}
         </Text>

@@ -1,22 +1,21 @@
 import { Flex, Button } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 SubjectsNavbar.propTypes = {
-  setGrade: PropTypes.func.isRequired,
+  grades: propTypes.arrayOf(propTypes.number).isRequired,
 };
 
-function SubjectsNavbar({ setGrade }) {
-  const grades = [7, 8, 9, 10, 11];
-
+function SubjectsNavbar({ grades }) {
   return (
-    <Flex gap={4} align="center">
+    <Flex gap={4} align="center" justify="center">
       {grades.map((grade) => (
         <Button
-          fontWeight={'medium'}
+          as={Link}
+          to={`/subjects/${grade}`}
           key={grade}
-          width={'100%'}
-          minW={'80px'}
-          onClick={() => setGrade(grade)}
+          fontWeight={'medium'}
+          maxW={'120px'}
         >
           {grade} клас
         </Button>
