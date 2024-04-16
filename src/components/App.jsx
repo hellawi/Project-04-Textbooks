@@ -3,7 +3,6 @@ import RootLayout from '../layouts/RootLayout';
 import HomePage from '../pages/HomePage';
 import BookPage from '../pages/BookPage';
 import SubjectPage from '../pages/SubjectPage';
-import ClassPage from '../pages/ClassPage';
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route exact path="/subjects" element={<SubjectPage />} />
         <Route path="/subjects/class/:grade" element={<SubjectPage />} />
-        <Route path="/subjects/:grade/:subject" element={<SubjectPage />} />
+        <Route path="/subjects/class/:grade/:subject" element={<SubjectPage />} />
         <Route path="/subjects/:bookId" element={<BookPage />} />
       </Route>
     </Routes>
