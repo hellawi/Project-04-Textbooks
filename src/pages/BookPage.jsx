@@ -14,63 +14,66 @@ function BookPage() {
     findBookById(bookId).then((data) => {
       setBook(data);
     });
-  });
+  }, [bookId]);
 
   return (
     <div>
-      <Heading mb="35px" ml="15px" mt="10px">
-        Підручник {book.title}{' '}
-        {/* <span style={{ color: '#b02e3b' }}>(Поглиблене)</span> */}
-      </Heading>
-
-      <Details
-        cover="https://shkola.in.ua/images/pictures/Pidruchnyky/8-klas/Geografija/heohrafiia-8-klas-pestushko-2021-pohlyblene.jpg"
-        description={book.description}
-        subject={book.subject}
-        class={book.grade}
-        download={book.url}
-      />
-
-      <br />
-      <Box>
-        <Heading size="md" sx={{ textAlign: 'center' }}>
-          Читати підручник зараз онлайн
-        </Heading>
-        <br />
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <PDFReader
-            pdf={
-              'https://drive.google.com/file/d/1te_FTuW0NHGNL_8luDoHhPE1yLmpsb81/preview'
-            }
-          />
-        </Box>
-
-        <Box>
-          <Heading mb="15px" ml="15px" mt="10px">
-            Відгуки
+      {book && (
+        <div>
+          <Heading mb="35px" ml="15px" mt="10px">
+            Підручник {book.title}{' '}
           </Heading>
-          <Textarea
-            placeholder="Ваш відгук..."
-            width="35%"
-            height="50px"
-            variant="filled"
-            ml="15px"
+
+          <Details
+            cover={book.cover}
+            description={book.description}
+            subject={book.subject}
+            class={book.grade}
+            download={book.url}
           />
-        </Box>
-        <Button variant="solid" colorScheme="blue" ml="15px" mt="5px">
-          Надіслати
-        </Button>
-        <Box>
-          <Review revText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos iure sit illo voluptatem commodi cupiditate sint harum repudiandae ut quasi voluptas laboriosam mollitia quisquam sunt odio similique totam error iste, quas eum, tempore minus perspiciatis. Facere at minus eligendi enim vel amet, ullam, ut qui architecto corrupti, perferendis quia!" />
-          <Review revText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos iure sit illo voluptatem commodi cupiditate sint harum repudiandae ut quasi voluptas laboriosam mollitia quisquam sunt odio similique totam error iste, quas eum, tempore minus perspiciatis. Facere at minus eligendi enim vel amet, ullam, ut qui architecto corrupti, perferendis quia!" />
-        </Box>
-      </Box>
+
+          <br />
+          <Box>
+            <Heading size="md" sx={{ textAlign: 'center' }}>
+              Читати підручник зараз онлайн
+            </Heading>
+            <br />
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <PDFReader
+                pdf={
+                  'https://drive.google.com/file/d/1te_FTuW0NHGNL_8luDoHhPE1yLmpsb81/preview'
+                }
+              />
+            </Box>
+
+            <Box>
+              <Heading mb="15px" ml="15px" mt="10px">
+                Відгуки
+              </Heading>
+              <Textarea
+                placeholder="Ваш відгук..."
+                width="35%"
+                height="50px"
+                variant="filled"
+                ml="15px"
+              />
+            </Box>
+            <Button variant="solid" colorScheme="blue" ml="15px" mt="5px">
+              Надіслати
+            </Button>
+            <Box>
+              <Review revText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos iure sit illo voluptatem commodi cupiditate sint harum repudiandae ut quasi voluptas laboriosam mollitia quisquam sunt odio similique totam error iste, quas eum, tempore minus perspiciatis. Facere at minus eligendi enim vel amet, ullam, ut qui architecto corrupti, perferendis quia!" />
+              <Review revText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos iure sit illo voluptatem commodi cupiditate sint harum repudiandae ut quasi voluptas laboriosam mollitia quisquam sunt odio similique totam error iste, quas eum, tempore minus perspiciatis. Facere at minus eligendi enim vel amet, ullam, ut qui architecto corrupti, perferendis quia!" />
+            </Box>
+          </Box>
+        </div>
+      )}
     </div>
   );
 }

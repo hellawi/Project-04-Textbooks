@@ -1,9 +1,18 @@
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Flex, Center, Link as ChakraLink, Text } from '@chakra-ui/react';
+import {
+  Flex,
+  Center,
+  Link as ChakraLink,
+  Text,
+  Heading,
+} from '@chakra-ui/react';
 
 function Navigation() {
   return (
     <Flex w="100%" bg={'#2F374A'}>
+      <Heading color="white" size="md" marginTop={3} ml={2}>
+        Pidruchnik.ua
+      </Heading>
       <Flex w="100%" p={4} color="white" justify="center" gap={5}>
         <Center>
           <ChakraLink as={ReactRouterLink} to="/">

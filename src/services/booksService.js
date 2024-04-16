@@ -11,7 +11,7 @@ export function createBookService(data) {
 }
 
 export function findBookById(bookId) {
-  return axios.post(`/books/${bookId}`);
+  return axios.get(`/books/${bookId}`);
 }
 
 export function updateBookService(bookId, data) {
