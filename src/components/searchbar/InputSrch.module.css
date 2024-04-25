@@ -1,0 +1,38 @@
+.inputWrapper {
+  background-color: #2f374a;
+  width: 80%;
+  border-radius: 10px;
+  height: 2.5rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.inputSrch {
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  caret-color: white;
+  color: white;
+}
+.inputSrch:focus {
+  outline: none;
+}
+.inputSrch::placeholder {
+  color: rgb(145, 145, 170);
+  padding-left: 2px;
+}
+
+.searchIcon {
+  color: #fff;
+}
+.coverSrch {
+  width: 300px;
+  height: auto;
+  margin-left: 10%;
+  margin-top: 50px;
+}
+.titleSrch {
+  margin-left: 10%;
+  padding-top: 10px;
+}

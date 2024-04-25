@@ -47,6 +47,41 @@ function Navigation() {
             4
           </ChakraLink>
         </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            5
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            6
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            7
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            8
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            9
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            10
+          </ChakraLink>
+        </Center>
+        <Center>
+          <ChakraLink as={ReactRouterLink} to="/classPage">
+            11
+          </ChakraLink>
+        </Center>
       </Flex>
     </Flex>
   );
