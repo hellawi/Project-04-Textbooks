@@ -31,7 +31,7 @@ function BookItem({ description, title, subject, grade, url, cover, id }) {
             <Text>{title}</Text>
           </LinkOverlay>
           <Text>{subject}</Text>
-          <Text>{grade}</Text>
+          <Text>{grade} клас</Text>
           <Text>
             {description.length > 200
               ? description.slice(0, 200) + '...'

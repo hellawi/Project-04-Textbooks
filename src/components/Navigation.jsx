@@ -16,7 +16,7 @@ function Navigation() {
       <Flex w="100%" p={4} color="white" justify="center" gap={5}>
         <Center>
           <ChakraLink as={ReactRouterLink} to="/">
-            Домашня сторінка
+            Головна
           </ChakraLink>
         </Center>
         <Center>

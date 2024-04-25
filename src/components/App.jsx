@@ -9,10 +9,10 @@ function App() {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-      <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/subjects" element={<SubjectPage />} />
         <Route path="/subjects/:bookId" element={<BookPage />} />
-        <Route path="/subjects/:grade" element={<SubjectPage />} />
+        <Route path="/subjects/class/:grade" element={<SubjectPage />} />
         <Route path="/classPage" element={<ClassPage />} />
       </Route>
     </Routes>

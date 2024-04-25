@@ -12,7 +12,7 @@ function SubjectsNavbar({ grades }) {
       {grades.map((grade) => (
         <Button
           as={Link}
-          to={`/subjects/${grade}`}
+          to={`/subjects/class/${grade}`}
           key={grade}
           fontWeight={'medium'}
           maxW={'120px'}
