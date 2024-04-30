@@ -25,7 +25,7 @@ function Sidebar({ subjects, grade }) {
       {subjects.map((subject) => (
         <Button
           as={Link}
-          to={`/subjects/${grade}/${subject}`}
+          to={`/subjects/class/${grade}/${subject}`}
           key={subject}
           colorScheme={'blue'}
           variant={'outline'}
