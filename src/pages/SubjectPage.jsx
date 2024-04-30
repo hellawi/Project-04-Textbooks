@@ -18,9 +18,11 @@ function SubjectPage() {
     setBooks(books.items);
 
     const uniqueSubjects = [...new Set(books.items.map((book) => book.subject))];
+    uniqueSubjects.sort((a, b) => a.localeCompare(b, 'uk'));
     setSubjects(uniqueSubjects);
     
     const uniqueGrades = [...new Set(books.items.map((book) => book.grade))];
+    uniqueGrades.sort((a, b) => a - b);
     setGrades(uniqueGrades);
   };
 
