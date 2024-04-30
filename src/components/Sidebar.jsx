@@ -19,7 +19,7 @@ function Sidebar({ subjects, grade }) {
       bg={'#2F374A'}
       border={'2px solid #576zzz882'}
     >
-      <Text w="100%" fontSize="xl" mb="4">
+      <Text w="100%" fontSize="xl" mb="4" color="white">
         Предмети {grade} клас
       </Text>
       {subjects.map((subject) => (
