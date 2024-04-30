@@ -3,6 +3,7 @@ import { Flex, Text, Button } from '@chakra-ui/react';
 function Sidebar() {
   return (
     <Flex
+      mt={20}
       ml={20}
       maxW={400}
       flexDirection={'column'}
